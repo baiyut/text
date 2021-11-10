@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我有好多的对象</title>
+</head>
+<body>
+    <script>
+        //使用Object创建对象
+    let obj = new Object();
+    obj.name ='Z';
+    obj.age ='17';
+    obj.gender ='male';
+    //使用对象字面量创建对象
+    let obj1={
+        name :'Candy',
+        age :18,
+        gender :'female'
+    }
+    //使用构造函数创建对象
+    function Person(){
+        this.name='Pole';
+        this.age=19;
+        this.gender='male';
+    }
+    let obj2 = new Person();
+    
+    console.log(obj,obj1,obj2);
+</script>
+</body>
+</html>
