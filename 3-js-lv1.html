@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <script>
+        //创建一个对象
+      let obj = {name:"Sue",age:18,gender:'female'};
+      //声明函数
+       function copy(insertObj){
+       let newObj = {};
+        for(let i in insertObj){
+        newObj[i] = insertObj[i];
+    }
+    return newObj;
+}
+let obj1 = copy(obj);
+//利用函数表达式创建函数
+let copyagain = function(obj){
+    return newObj;
+}
+const obj2=obj
+
+//拓展运算符进行深拷贝
+var { ...obj3 } = obj
+
+let arr = [];
+
+arr.push(obj1,obj2,obj3)
+
+console.table(arr);
+
+    </script>
+</body>
+</html>
