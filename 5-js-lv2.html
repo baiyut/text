@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-lv2</title>
+</head>
+<body>
+    <div align="center">
+        <b>请选择您的爱好</b>
+        <br />
+    </div>
+
+    <div id="divlist" align="center">
+        <input type="checkbox" value="内卷" class="check">内卷
+        <input type="checkbox" value="疯狂内卷" class="check">疯狂内卷
+        <input type="checkbox" value="拼命内卷" class="check">拼命内卷
+        <input type="checkbox" value="使劲内卷" class="check">使劲内卷
+        <br />
+        <input type="button" value="全选"  onclick="opcheckboxed('checkbox', 'checkall')">
+        <input type="button" value="全不选" onclick="opcheckboxed('checkbox', 'uncheckall')">
+        <input type="button" value="反选"  onclick="opcheckboxed('checkbox', 'reversecheck')">
+    </div>
+    <script>
+        function opcheckboxed(objName, type){
+  var objNameList=document.getElementsByClassName('check');
+  if(null!=objNameList){
+    for(var i=0;i<objNameList.length;i++){  
+      if(objNameList[i].checked==true)
+      {
+        if(type != 'checkall') {  
+          objNameList[i].checked=false;
+        }
+        
+      } else {
+        if(type != 'uncheckall') {  
+          objNameList[i].checked=true;
+        }
+      }
+    }  
+  }
+}
+    </script>
+</body>
+</html>
