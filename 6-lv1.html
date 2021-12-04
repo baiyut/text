@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            position: relative;
+            top: 100px;
+            left: 0;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+        .div2{
+            position: relative;
+            top: 100px;
+            left: 0;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            background-color: greenyellow;
+        }
+        .div3{
+            position: relative;
+            top: 100px;
+            left: 0;
+            border-radius: 100%;
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+    </style>
+    
+</head>
+<div  class="div1" id="xa"></div>
+<div  class="div2" id="xb"></div>
+<div  class="div3" id="xc"></div>
+</body>
+<script>
+    let sept1= document.getElementById('xa');
+    let sept2= document.getElementById('xb');
+    let sept3= document.getElementById('xc');
+    /* setTimeout
+    setTimeout(function (){
+        let timer1=setInterval(function(){
+        if (sept1.offsetLeft >= 400){
+            clearInterval(timer1);
+        }
+        sept1.style.left =sept1.offsetLeft + 1 +'px';
+    },50);
+    setTimeout(function (){
+        let timer2=setInterval(function(){
+        if (sept2.offsetLeft >= 400){
+            clearInterval(timer2);
+        }
+        sept2.style.left =sept2.offsetLeft + 1 +'px';
+    },50);
+    setTimeout(function (){
+        let timer3=setInterval(function(){
+        if (sept3.offsetLeft >= 400){
+            clearInterval(timer3);
+        }
+        sept3.style.left =sept3.offsetLeft + 1 +'px';
+    },50);
+    },3000);
+    },3000);
+    },1); */
+    //promise
+    /* let div1=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let timer1=setInterval(function(){
+        if (sept1.offsetLeft >= 400){
+            clearInterval(timer1);
+        }
+        sept1.style.left =sept1.offsetLeft + 1 +'px';
+    },50);
+},1);
+    resolve(setTimeout(()=>{
+            let timer2=setInterval(function(){
+        if (sept2.offsetLeft >= 400){
+            clearInterval(timer2);
+        }
+        sept2.style.left =sept2.offsetLeft + 1 +'px';
+    },50);},3000));
+    resolve(setTimeout(()=>{
+        let timer3=setInterval(function(){
+            if (sept3.offsetLeft>= 400){
+                clearInterval(timer3);
+            }
+            sept3.style.left=sept3.offsetLeft + 1 +'px';
+        },50);
+    },6000));
+    })
+    .then(
+        (data1)=>{
+            return data1;
+        }
+    )
+    .then(
+        (date2)=>{
+            return (date2)
+        }
+    ); */
+
+       //async/await 
+       let step = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(setTimeout(()=>{
+            let timer1=setInterval(function(){
+        if (sept1.offsetLeft >= 400){
+            clearInterval(timer1);
+        }
+        sept1.style.left =sept1.offsetLeft + 1 +'px';
+    },50);},1));
+    resolve(setTimeout(()=>{
+            let timer2=setInterval(function(){
+        if (sept2.offsetLeft >= 400){
+            clearInterval(timer2);
+        }
+        sept2.style.left =sept2.offsetLeft + 1 +'px';
+    },50);},2000));
+    resolve(setTimeout(()=>{
+            let timer3=setInterval(function(){
+        if (sept3.offsetLeft >= 400){
+            clearInterval(timer3);
+        }
+        sept3.style.left =sept3.offsetLeft + 1 +'px';
+    },50);},4000));
+    }, );
+  });
+};
+async function demo() {
+  let sept1 = await step(6000);
+  let sept2 = await step(6000);
+  let sept3 = await step(6000);
+  return
+}
+demo().then((res) => {});
+ </script>
+</html>
